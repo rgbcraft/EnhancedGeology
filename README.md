@@ -1,3 +1,3 @@
-# eyecandycraft
-La mod Eyecandycraft per il server RGBcraft
+# EnhancedGeology
+Pane quotidiano per geologi minecraftiani
 

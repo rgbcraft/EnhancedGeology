@@ -39,6 +39,8 @@ buildcraft
 appeng
 ic2
 thermalexpansion
+forge_at.cfg
+fml_at.cfg
 
 #gastronomod
 com/rgbcraft/gastronomod
