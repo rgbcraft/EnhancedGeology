@@ -15,6 +15,9 @@ import enhancedgeology.main.radiology.ItemLECell;
 import enhancedgeology.main.radiology.ItemLECellx2;
 import enhancedgeology.main.radiology.ItemLECellx4;
 import enhancedgeology.main.radiology.ItemUF6;
+import enhancedgeology.main.tools.ToolConduttimetro;
+import enhancedgeology.main.tools.ToolContatoreGeiger;
+import enhancedgeology.main.tools.ToolGravimetro;
 
 public class Items {
 	
@@ -22,7 +25,8 @@ public class Items {
 	public static Item MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
-	Zirconio, Zircaloy, ZircaloyPlate;
+	Zirconio, Zircaloy, ZircaloyPlate,
+	Gravimetro, Conduttimetro, ContatoreGeiger;
  
 	public static void InizializzaItem() {
 
@@ -68,6 +72,13 @@ public class Items {
 	HECellx2 = new ItemHECellx2(16204);
 	HECellx4 = new ItemHECellx4(16205);
 	
+	Gravimetro = new ToolGravimetro(16300);
+	Conduttimetro = new ToolConduttimetro(16301);
+	ContatoreGeiger = new ToolContatoreGeiger(16302);
+	GameRegistry.registerItem(Gravimetro, "Gravimetro");
+	GameRegistry.registerItem(Conduttimetro, "Conduttimetro");
+	GameRegistry.registerItem(ContatoreGeiger, "ContatoreGeiger");
+	
 	}
 	
 	 
@@ -109,6 +120,10 @@ public class Items {
 		LanguageRegistry.addName(HECell, "Highly Enriched Uranium Cell");
 		LanguageRegistry.addName(HECellx2, "Dual Highly Enriched Uranium Cell");
 		LanguageRegistry.addName(HECellx4, "Quad Highly Enriched Uranium Cell");
+		
+		LanguageRegistry.addName(Gravimetro, "Gravimetro");
+		LanguageRegistry.addName(Conduttimetro, "Conduttimetro");
+		LanguageRegistry.addName(ContatoreGeiger, "Contatore Geiger");
 		
 	}
 }

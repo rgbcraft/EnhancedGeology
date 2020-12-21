@@ -12,6 +12,8 @@ public class Roccia extends Block {
 		this.setBlockName("roccia");
 		this.setTextureFile("/enhancedgeology/textures/rocce.png");
 		this.setCreativeTab(CreativeTab.tabEnhancedGeologyRocce);
+		this.setHardness(1.7F);
+		this.setResistance(15.0F);
 		
 	}
 	

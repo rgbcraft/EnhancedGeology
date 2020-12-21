@@ -25,7 +25,7 @@ public class TettoAmiantoBlock extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEnhancedGeologyMateriali);
 		setBlockName("TettoAmianto");
-		blockIndexInTexture = 2;
+		blockIndexInTexture = 4;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {

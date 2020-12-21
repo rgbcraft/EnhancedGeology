@@ -12,7 +12,8 @@ public class Materiale extends Block {
 		this.setBlockName("materiale");
 		this.setTextureFile("/enhancedgeology/textures/materiali.png");
 		this.setCreativeTab(CreativeTab.tabEnhancedGeologyMateriali);
-		
+		this.setHardness(1.7F);
+		this.setResistance(15.0F);
 	}
 	
 	@Override

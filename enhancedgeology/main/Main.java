@@ -14,7 +14,7 @@ import enhancedgeology.main.items.Items;
 import enhancedgeology.main.proxies.CommonProxy;
 import net.minecraft.src.BaseMod;
 
-@Mod(name="Enhanced Geology", version="1.0", modid="enhancedgeology")
+@Mod(name="Enhanced Geology", version="1.1", modid="enhancedgeology")
 public class Main extends BaseMod{
 	
 	@SidedProxy(clientSide="enhancedgeology.main.proxies.ClientProxy", serverSide="enhancedgeology.main.proxies.ServerProxy")
@@ -22,7 +22,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.0";
+		return "1.1";
 	}
 
 	@Override
