@@ -1,12 +1,14 @@
 package enhancedgeology.main.handlers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import enhancedgeology.main.blocks.Blocks;
 import enhancedgeology.main.items.Items;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +19,30 @@ public class CraftingHandler {
 		// QUARZO (Stack)
 		ItemStack quarzoStack = appeng.api.Materials.matQuartzDust;
 		ItemStack quarzoCristalloStack = appeng.api.Materials.matQuartz;
+		
+		
+		//Crafting con Ore Dictionary per la Bateia
+		List <ItemStack> ores = OreDictionary.getOres("ingotRefinedIron");
+		if ( ores.size() > 0 ) {
+			ItemStack inox = ores.get(0);
+			GameRegistry.addRecipe(new ItemStack(Items.Bateia), new Object[] {"   ", "# #", "###", '#', inox});
+		} else {
+			System.err.println("[EnhancedGeology] Impossibile registrare refinedIron, disabilitata bateia");
+		}
+		
+		//Crafting con Ore Dictionary per l'acido solforico
+		ores = OreDictionary.getOres("sulfuricAcid");
+		if ( ores.size() > 0 ) {
+			ItemStack H2SO4 = ores.get(0);
+			GregtechCompat.addChemicalRecipe(new ItemStack(Items.U3O8, 1), H2SO4,
+					new ItemStack(Items.UO2), 3600);
+		} else {
+			System.err.println("[EnhancedGeology] Impossibile registrare acido solforico, disabilitata recipe secondaria UO2");
+		}
+		
+		
+		
+		
 		//
 		// RECIPE CRAFTING
 		//
@@ -82,6 +108,13 @@ public class CraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.TettoAmianto, 16),
 				new Object[] { "ACA", "CAC", "ACA", 'C', Items.Crisotilo, 'A', Item.clay });
 
+		
+		//Bateia 
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.goldNugget, 4), new Object[] {new ItemStack(Items.Bateia, 1, 100)});
+		
+		
+		
 		/*
 		 * GREGTECH SINTASSI
 		 * 

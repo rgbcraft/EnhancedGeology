@@ -15,6 +15,7 @@ import enhancedgeology.main.radiology.ItemLECell;
 import enhancedgeology.main.radiology.ItemLECellx2;
 import enhancedgeology.main.radiology.ItemLECellx4;
 import enhancedgeology.main.radiology.ItemUF6;
+import enhancedgeology.main.tools.ToolBateia;
 import enhancedgeology.main.tools.ToolConduttimetro;
 import enhancedgeology.main.tools.ToolContatoreGeiger;
 import enhancedgeology.main.tools.ToolGravimetro;
@@ -26,7 +27,7 @@ public class Items {
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
 	Zirconio, Zircaloy, ZircaloyPlate,
-	Gravimetro, Conduttimetro, ContatoreGeiger;
+	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia;
  
 	public static void InizializzaItem() {
 
@@ -75,9 +76,12 @@ public class Items {
 	Gravimetro = new ToolGravimetro(16300);
 	Conduttimetro = new ToolConduttimetro(16301);
 	ContatoreGeiger = new ToolContatoreGeiger(16302);
+	Bateia = new ToolBateia(16303);
+	Bateia.setContainerItem(Bateia);
 	GameRegistry.registerItem(Gravimetro, "Gravimetro");
 	GameRegistry.registerItem(Conduttimetro, "Conduttimetro");
 	GameRegistry.registerItem(ContatoreGeiger, "ContatoreGeiger");
+	GameRegistry.registerItem(Bateia, "Bateia");
 	
 	}
 	
@@ -124,7 +128,7 @@ public class Items {
 		LanguageRegistry.addName(Gravimetro, "Gravimetro");
 		LanguageRegistry.addName(Conduttimetro, "Conduttimetro");
 		LanguageRegistry.addName(ContatoreGeiger, "Contatore Geiger");
-		
+		LanguageRegistry.addName(Bateia, "Bateia");		
 	}
 }
 

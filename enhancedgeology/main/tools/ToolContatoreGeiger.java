@@ -42,6 +42,8 @@ public class ToolContatoreGeiger extends Item implements IElectricItem {
 			mineralRadioactivity.put("146:10", 1.85F);
 			mineralRadioactivity.put("73:0", 0.003F);
 			mineralRadioactivity.put("224:3", 12.6762F);
+			mineralRadioactivity.put("246:5", 45.6762F);
+			mineralRadioactivity.put("233:0", 67.6762F);
 
 		}
 
