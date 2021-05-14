@@ -7,6 +7,7 @@ import enhancedgeology.main.items.Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,38 +28,36 @@ public class ToolBateia extends Item {
 		this.setItemName("Bateia");
 		this.setMaxStackSize(1);
 	}
-	
-	
-	
-	
-	@Override
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack)
-    {
-        return true;
-    }
 
+	@Override
+	public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack) {
+		return true;
+	}
 
 	@Override
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side,
 			float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
 			if (itemStack.getItemDamage() <= 99) {
-				if (world.getBlockMaterial(x, y + 1, z).equals(Material.water) && player.isInWater() == true) {
-					if (world.getBiomeGenForCoords(x, z).equals(BiomeGenBase.frozenRiver)) {
-						itemStack.damageItem(4, player);
-						player.addExhaustion(1.2F);
-						return true;
-					} else if (world.getBiomeGenForCoords(x, z).equals(BiomeGenBase.river)) {
-						itemStack.damageItem(2, player);
-						player.addExhaustion(0.3F);
-						return true;
-					} else if (itemStack.getItemDamage() - 10 > 0) {
-						player.addExhaustion(0.05F);
-						itemStack.damageItem(-4, player);
-						return true;
+				if ((x < -2000 || x > 2000) && (z < -2000 || z > 2000)) {
+					if (world.getBlockMaterial(x, y + 1, z).equals(Material.water)
+							&& (world.getBlockId(x, y, z) == Block.gravel.blockID || world.getBlockId(x, y, z) == Block.sand.blockID) && player.isInWater() == true) {
+						if (world.getBiomeGenForCoords(x, z).equals(BiomeGenBase.frozenRiver)) {
+							itemStack.damageItem(4, player);
+							player.addExhaustion(1.2F);
+							return true;
+						} else if (world.getBiomeGenForCoords(x, z).equals(BiomeGenBase.river)) {
+							itemStack.damageItem(2, player);
+							player.addExhaustion(0.3F);
+							return true;
+						} else if (itemStack.getItemDamage() - 10 > 0) {
+							player.addExhaustion(0.05F);
+							itemStack.damageItem(-4, player);
+							return true;
+						}
 					}
+					return false;
 				}
-				player.sendChatToPlayer("Bisogna essere in acqua per usare la bateia");
 				return false;
 			}
 			player.sendChatToPlayer("La bateia è piena!");

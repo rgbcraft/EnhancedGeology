@@ -20,8 +20,8 @@ public class TettoAmiantoBlock extends BlockContainer {
 
 	public TettoAmiantoBlock(int id, int texture) {
 		super(id, Material.iron);
-		setHardness(1.0F);
-		setResistance(1.0F);
+		setHardness(0.6F);
+		setResistance(0.6F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEnhancedGeologyMateriali);
 		setBlockName("TettoAmianto");

@@ -31,5 +31,7 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("ingotHeu", Items.HEU);
 		OreDictionary.registerOre("dustZirconium", Items.Zirconio);
 		OreDictionary.registerOre("ingotZircaloy", Items.Zircaloy);
+		OreDictionary.registerOre("ironScraps", Items.IronScraps);
+		OreDictionary.registerOre("cellLiquidOxygen", Items.LOXCell);
 	}
 }

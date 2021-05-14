@@ -40,8 +40,31 @@ public class CraftingHandler {
 			System.err.println("[EnhancedGeology] Impossibile registrare acido solforico, disabilitata recipe secondaria UO2");
 		}
 		
+		//BASIC OXYGEN STEELMAKING
 		
+		//Ossigeno Liquido
+		ores = OreDictionary.getOres("molecule_2o");
+		if ( ores.size() > 0 ) {
+			ItemStack O2 = ores.get(0);
+			GregtechCompat.addVacuumFreezerRecipe(O2, new ItemStack(Items.LOXCell), 600);
+		} else {
+			System.err.println("[EnhancedGeology] Impossibile registrare cella aria, disabilitate recipe per il BOS");
+		}
 		
+		ores = OreDictionary.getOres("ingotSteel");
+		if ( ores.size() > 0 ) {
+			ItemStack steel = ores.get(0);
+			steel.stackSize = 64;
+			GregtechCompat.addBlastRecipe(new ItemStack(Item.ingotIron, 64), new ItemStack(Items.LOXCell, 10), steel, GregtechCompat.getGregTechItem(1, 10, 63), 2500, 1408, 1825);
+		} else {
+			System.err.println("[EnhancedGeology] Impossibile registrare acciaio, disabilitate recipe per il BOS");
+		}
+		
+		//Ferro
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.IronScraps, 3), new Object[] {new ItemStack(Items.Ematite, 1), new ItemStack(Items.Magnetite, 1), GregtechCompat.getGregTechItem(1, 1, 3)});
+		
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.IronScraps, 64), GregtechCompat.getGregTechItem(1, 16, 4), new ItemStack(Item.ingotIron, 64), GregtechCompat.getGregTechItem(1, 2, 63), 900, 1280, 1900);
 		
 		//
 		// RECIPE CRAFTING
@@ -82,10 +105,10 @@ public class CraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materiale, 2, 6),
 				new Object[] { "   ", " Q ", " Q ", 'Q', new ItemStack(Blocks.materiale, 1, 4) });
 		// Mattone di quarzite
-		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materiale, 1, 5),
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materiale, 4, 5),
 				new Object[] { "   ", "QQ ", "QQ ", 'Q', new ItemStack(Blocks.materiale, 1, 4) });
 		// Quarzite incisa
-		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materiale, 1, 7),
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materiale, 4, 7),
 				new Object[] { "   ", "Q Q", "Q Q", 'Q', new ItemStack(Blocks.materiale, 1, 4) });
 
 		// Mattoni di tufo
@@ -111,10 +134,10 @@ public class CraftingHandler {
 		
 		//Bateia 
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(Item.goldNugget, 4), new Object[] {new ItemStack(Items.Bateia, 1, 100)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.goldNugget, 2), new Object[] {new ItemStack(Items.Bateia, 1, 100)});
 		
 		
-		
+	
 		/*
 		 * GREGTECH SINTASSI
 		 * 
@@ -122,7 +145,11 @@ public class CraftingHandler {
 		 * 
 		 * TIPO: 1. Polveri 2. Celle
 		 */
-
+		
+		//COMPATIBILITÀ PER IDIOZIE FATTE DAL CHICCO
+		GameRegistry.addShapelessRecipe(new ItemStack(Block.oreGold, 1), new ItemStack(Block.oreGold, 1, 5));
+		GameRegistry.addShapelessRecipe(new ItemStack(Block.oreIron, 1), new ItemStack(Block.oreIron, 1, 1));
+		
 		/*
 		 * RICETTE DECOMPOSIZIONE ROCCE
 		 */
@@ -155,8 +182,8 @@ public class CraftingHandler {
 
 		// Kimberlite -> 85% 54 Olivina, 6% 4 almandino, 6% 4 piropo, 3% 2 diamante
 		GregtechCompat.addGrinderRecipe(new ItemStack(Blocks.roccia, 64, 9), 0,
-				GregtechCompat.getGregTechItem(1, 54, 37), GregtechCompat.getGregTechItem(1, 4, 57),
-				GregtechCompat.getGregTechItem(1, 4, 56), new ItemStack(Item.diamond, 3));
+				GregtechCompat.getGregTechItem(1, 54, 37), GregtechCompat.getGregTechItem(1, 4, 54),
+				GregtechCompat.getGregTechItem(1, 4, 55), new ItemStack(Item.diamond, 3));
 
 		// Diaspro -> Silice (7)
 		ic2.api.Ic2Recipes.addMaceratorRecipe(new ItemStack(Blocks.roccia, 1, 5),
@@ -300,7 +327,7 @@ public class CraftingHandler {
 		 */
 
 		// Uranite -> U3O8
-		GregtechCompat.addGrinderRecipe(new ItemStack(Blocks.roccia, 5, 10), 1,
+		GregtechCompat.addGrinderRecipe(new ItemStack(Blocks.roccia, 5, 10), 0,
 				GregtechCompat.getGregTechItem(1, 2, 244), GregtechCompat.getGregTechItem(1, 2, 23),
 				new ItemStack(Items.U3O8, 1), null);
 
@@ -355,7 +382,7 @@ public class CraftingHandler {
 				new ItemStack(Items.Zircaloy, 64), null, 6500, 20, 2250);
 
 		// Zircaloy -> ZircaloyPlate
-		GregtechCompat.addBenderRecipe(new ItemStack(Items.Zircaloy, 1), new ItemStack(Items.ZircaloyPlate, 1), 800,
+		GregtechCompat.addBenderRecipe(new ItemStack(Items.Zircaloy, 1), new ItemStack(Items.ZircaloyPlate, 8), 800,
 				32);
 
 		// LECell -> LECellx2

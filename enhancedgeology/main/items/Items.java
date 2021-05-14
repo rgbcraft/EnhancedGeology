@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
-
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import enhancedgeology.main.CreativeTab;
@@ -27,7 +27,7 @@ public class Items {
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
 	Zirconio, Zircaloy, ZircaloyPlate,
-	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia;
+	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps;
  
 	public static void InizializzaItem() {
 
@@ -35,10 +35,17 @@ public class Items {
 	
 	MartelloGeologo = new ItemMartelloGeologo(16030, EnumToolMaterial.EMERALD);
 	
-	Fluoro = new Item(16033).setTextureFile(texture).setIconIndex(16).setCreativeTab(CreativeTab.tabEnhancedGeologyAltro)
+	/*Fluoro = new Item(16033).setTextureFile(texture).setIconIndex(16).setCreativeTab(CreativeTab.tabEnhancedGeologyAltro)
 			.setItemName("Fluoro");
 	UO2 = new Item(16034).setTextureFile(texture).setIconIndex(17).setCreativeTab(CreativeTab.tabEnhancedGeologyAltro)
 			.setItemName("UO2");
+	*/
+	
+	
+	
+	Fluoro = new ItemOggetto(16033, 16, "Fluoro", 64);
+	UO2 = new ItemOggetto(16034, 17, "UO2", 64);
+	LOXCell = new ItemOggetto(16035, 21, "LOXCell", 64);
 	
 	UF6Nat = new ItemUF6(16100, 18, "UF6Nat");
 	UF6LE = new ItemUF6(16101, 19, "UF6LE");
@@ -64,6 +71,7 @@ public class Items {
 	Zirconio = new ItemOggetto(16221, 66, "Zirconio", 64);
 	Zircaloy = new ItemOggetto(16222, 50, "Zircaloy", 64);
 	ZircaloyPlate = new ItemOggetto(16223, 82, "ZircaloyPlate", 64);
+	IronScraps = new ItemOggetto(16224, 96, "IronScraps", 64);
 	
 	LECell = new ItemLECell(16200);
 	LECellx2 = new ItemLECellx2(16201);
@@ -72,6 +80,8 @@ public class Items {
 	HECell = new ItemHECell(16203);
 	HECellx2 = new ItemHECellx2(16204);
 	HECellx4 = new ItemHECellx4(16205);
+	
+	
 	
 	Gravimetro = new ToolGravimetro(16300);
 	Conduttimetro = new ToolConduttimetro(16301);
@@ -104,6 +114,7 @@ public class Items {
 		LanguageRegistry.addName(Fluorite, "Fluorite");
 		
 		LanguageRegistry.addName(Fluoro, "Fluorine Cell");
+		LanguageRegistry.addName(LOXCell, "Liquid Oxygen Cell");
 		
 		LanguageRegistry.addName(U3O8, "U₃O₈ (Yellowcake)");
 		LanguageRegistry.addName(UO2, "UO₂");
@@ -116,6 +127,8 @@ public class Items {
 		LanguageRegistry.addName(Zirconio, "Zirconio");
 		LanguageRegistry.addName(Zircaloy, "Zircaloy 4");
 		LanguageRegistry.addName(ZircaloyPlate, "Zircaloy 4 Plate");
+		
+		LanguageRegistry.addName(IronScraps, "Iron Ore Scraps");
 		
 		LanguageRegistry.addName(LECell, "Lightly Enriched Uranium Cell");
 		LanguageRegistry.addName(LECellx2, "Dual Lightly Enriched Uranium Cell");
