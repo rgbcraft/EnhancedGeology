@@ -23,10 +23,10 @@ import enhancedgeology.main.tools.ToolGravimetro;
 public class Items {
 	
 	//ITEMS
-	public static Item MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
+	public static Item GasDrill, MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
-	Zirconio, Zircaloy, ZircaloyPlate,
+	Zirconio, Zircaloy, ZircaloyPlate, Miscela,
 	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps;
  
 	public static void InizializzaItem() {
@@ -34,6 +34,7 @@ public class Items {
 	String texture = "/enhancedgeology/textures/oggetti.png";	
 	
 	MartelloGeologo = new ItemMartelloGeologo(16030, EnumToolMaterial.EMERALD);
+	GasDrill = new ItemGasDrill(16031, EnumToolMaterial.IRON);
 	
 	/*Fluoro = new Item(16033).setTextureFile(texture).setIconIndex(16).setCreativeTab(CreativeTab.tabEnhancedGeologyAltro)
 			.setItemName("Fluoro");
@@ -46,7 +47,8 @@ public class Items {
 	Fluoro = new ItemOggetto(16033, 16, "Fluoro", 64);
 	UO2 = new ItemOggetto(16034, 17, "UO2", 64);
 	LOXCell = new ItemOggetto(16035, 21, "LOXCell", 64);
-	
+	Miscela = new ItemOggettoContainer(16036, 10, "Miscela", 4, ic2.api.Items.getItem("fuelCan").getItem());
+		
 	UF6Nat = new ItemUF6(16100, 18, "UF6Nat");
 	UF6LE = new ItemUF6(16101, 19, "UF6LE");
 	UF6HE = new ItemUF6(16102, 20, "UF6HE");
@@ -99,6 +101,7 @@ public class Items {
 	
 	
 	public static void RegistraLingua() {
+		LanguageRegistry.addName(GasDrill, "Gas-powered Drill");
 		LanguageRegistry.addName(MartelloGeologo, "Martello da geologo");
 		
 		LanguageRegistry.addName(Biotite, "Biotite");
@@ -115,6 +118,7 @@ public class Items {
 		
 		LanguageRegistry.addName(Fluoro, "Fluorine Cell");
 		LanguageRegistry.addName(LOXCell, "Liquid Oxygen Cell");
+		LanguageRegistry.addName(Miscela, "Gasoline Mixture");
 		
 		LanguageRegistry.addName(U3O8, "U₃O₈ (Yellowcake)");
 		LanguageRegistry.addName(UO2, "UO₂");

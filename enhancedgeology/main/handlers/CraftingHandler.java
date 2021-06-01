@@ -21,6 +21,10 @@ public class CraftingHandler {
 		ItemStack quarzoCristalloStack = appeng.api.Materials.matQuartz;
 		
 		
+		ItemStack cell = ic2.api.Items.getItem("cell").copy();
+
+			
+		
 		//Crafting con Ore Dictionary per la Bateia
 		List <ItemStack> ores = OreDictionary.getOres("ingotRefinedIron");
 		if ( ores.size() > 0 ) {
@@ -401,5 +405,30 @@ public class CraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(Items.HECellx4, 1),
 				new Object[] { " C ", "PPP", " C ", 'C', Items.HECellx2, 'P', Items.ZircaloyPlate });
 
+		//TRAPANO A BENZINA
+		
+		
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Items.GasDrill, 1, Items.GasDrill.getMaxDamage() - 1),
+				new Object [] { 
+					" # ", "#C#", "#P#",
+					'#', GregtechCompat.getGregTechItem(0, 1, 83),
+					'C', ic2.api.Items.getItem("electronicCircuit"),
+					'P', Block.pistonBase
+				});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.GasDrill, 1, 0), new Object[] {new ItemStack(Items.Miscela, 1), new ItemStack(Items.GasDrill, 1, Items.GasDrill.getMaxDamage() - 1)});
+		
+
+		cell.stackSize = 1;	
+		GregtechCompat.addCannerRecipe(ic2.api.Items.getItem("filledFuelCan"), GregtechCompat.getGregTechItem(2, 1, 24),
+		new ItemStack(Items.Miscela, 1), cell, 100, 1);
+		
+		cell.stackSize = 8;
+		GregtechCompat.addCannerRecipe(ic2.api.Items.getItem("fuelCan"),
+				GregtechCompat.getGregTechItem(2, 8, 35),
+		new ItemStack(Items.Miscela, 1), cell, 100, 1);
+		
+		
 	}
 }

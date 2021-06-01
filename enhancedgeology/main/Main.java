@@ -15,7 +15,7 @@ import enhancedgeology.main.items.Items;
 import enhancedgeology.main.proxies.CommonProxy;
 import net.minecraft.src.BaseMod;
 
-@Mod(name="Enhanced Geology", version="1.4", modid="enhancedgeology", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders;")
+@Mod(name="Enhanced Geology", version="1.5", modid="enhancedgeology", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders;")
 public class Main extends BaseMod{
 	
 	@SidedProxy(clientSide="enhancedgeology.main.proxies.ClientProxy", serverSide="enhancedgeology.main.proxies.ServerProxy")
@@ -23,7 +23,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.4";
+		return "1.5";
 	}
 
 	@Override
