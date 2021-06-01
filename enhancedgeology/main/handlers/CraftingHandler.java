@@ -354,11 +354,11 @@ public class CraftingHandler {
 
 		// UF6 -> UF6LE
 		GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.UF6Nat, 1), 0, new ItemStack(Items.UF6LE), null, null,
-				null, 36000);
+				null, 18000);
 
 		// UF6LE -> UF6HE
 		GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.UF6LE, 1), 0, new ItemStack(Items.UF6HE), null, null,
-				null, 864000);
+				null, 72000);
 		// UF6LE -> LEU
 
 		ic2.api.Ic2Recipes.addExtractorRecipe(new ItemStack(Items.UF6LE), new ItemStack(Items.LEU));
