@@ -1,4 +1,4 @@
-package enhancedgeology.main.items;
+package enhancedgeology.main.tools;
 
 import enhancedgeology.main.CreativeTab;
 import net.minecraft.block.Block;
@@ -10,9 +10,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 
-public class ItemMartelloGeologo extends ItemPickaxe {
+public class ToolMartelloGeologo extends ItemPickaxe {
 
-	public ItemMartelloGeologo(int par1, EnumToolMaterial par2EnumToolMaterial) {
+	public ToolMartelloGeologo(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
 		this.setTextureFile("/enhancedgeology/textures/oggetti.png");
 		this.setIconIndex(0);

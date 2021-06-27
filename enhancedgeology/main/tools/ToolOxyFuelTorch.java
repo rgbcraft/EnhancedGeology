@@ -1,4 +1,6 @@
-package enhancedgeology.main.items;
+package enhancedgeology.main.tools;
+
+import java.util.ArrayList;
 
 import enhancedgeology.main.CreativeTab;
 import net.minecraft.block.Block;
@@ -9,31 +11,48 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeHooks;
 
-public class ItemGasDrill extends ItemPickaxe {
+public class ToolOxyFuelTorch extends ItemPickaxe {
 
-	final static int MAXDAMAGE = 1000;
-	final static int FUELLOWWARNINGLEVEL = MAXDAMAGE - (MAXDAMAGE / 100 * 15);
+	final static int MAXDAMAGE = 20;
 	
-	public ItemGasDrill(int par1, EnumToolMaterial par2EnumToolMaterial) {
+	ArrayList<String> cuttableItems = new ArrayList<String>();
+
+	
+	public ToolOxyFuelTorch(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
 		this.setTextureFile("/enhancedgeology/textures/oggetti.png");
-		this.setIconIndex(11);
+		this.setIconIndex(114);
 		this.setMaxDamage(MAXDAMAGE);
 		this.setCreativeTab(CreativeTab.tabEnhancedGeologyAltro);
-		this.setItemName("gas_drill");
+		this.setItemName("OxyFuelTorch");
 		this.setMaxStackSize(1);
 		this.setNoRepair();
+		
+		cuttableItems.add("178:0");
+		cuttableItems.add("661:0");		
+		
+		//test
+		cuttableItems.add("4057:0");
 	}
 	
 	@Override
-	public float getStrVsBlock(ItemStack is, Block par2Block) {
+	public float getStrVsBlock(ItemStack is, Block par2Block) {	
 		
 		if (is.getItemDamage() == (MAXDAMAGE - 1)) {
 			return 0.1F;
 		}
-		return par2Block != null && (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.anvil || par2Block.blockMaterial == Material.rock) ? 50.0F : 0.1F;
+		
+		String itemString = par2Block.blockID + ":0";
+		boolean breakable = false;
+
+		for(String item: cuttableItems) {
+		     if(item.equals(itemString)) {
+		         breakable = true;
+		         break;
+		     }
+		}
+		return par2Block != null && breakable ? 500.0F : 0.1F;
 	}
 	
 	@Override 
@@ -42,18 +61,19 @@ public class ItemGasDrill extends ItemPickaxe {
 		
 		if (par1ItemStack.getItemDamage() == (MAXDAMAGE - 2)) {
 			if (!par2World.isRemote) {
-				par2World.playSoundAtEntity(par3Entity, "EnhGeo_RanOutOfGas", 1.0F, 1.0F);
+				par1ItemStack.getItem().setIconIndex(113);
 			}
 			par1ItemStack.setItemDamage(MAXDAMAGE - 1);
 		}
 		
 		if (par1ItemStack.getItemDamage() == (0)) {
 			if (!par2World.isRemote && !player.capabilities.isCreativeMode) {
-				par2World.playSoundAtEntity(player, "EnhGeo_StartDrill", 1.0F, 1.0F);
+				par1ItemStack.getItem().setIconIndex(114);
 			}
 			if (!player.capabilities.isCreativeMode) {
 				par1ItemStack.damageItem(1, player);
 			}
 		}
 	}
+	
 }

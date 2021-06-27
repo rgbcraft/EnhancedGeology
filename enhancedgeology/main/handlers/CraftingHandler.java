@@ -1,5 +1,6 @@
 package enhancedgeology.main.handlers;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import net.minecraft.item.ItemStack;
 public class CraftingHandler {
 
 	public static void AggiungiCrafting() {
+			
+		
 		// QUARZO (Stack)
 		ItemStack quarzoStack = appeng.api.Materials.matQuartzDust;
 		ItemStack quarzoCristalloStack = appeng.api.Materials.matQuartz;
@@ -60,6 +63,8 @@ public class CraftingHandler {
 			ItemStack steel = ores.get(0);
 			steel.stackSize = 64;
 			GregtechCompat.addBlastRecipe(new ItemStack(Item.ingotIron, 64), new ItemStack(Items.LOXCell, 10), steel, GregtechCompat.getGregTechItem(1, 10, 63), 2500, 1408, 1825);
+			steel.stackSize = 1;
+			GameRegistry.addRecipe(new ItemStack(Items.GlassHammer), new Object[] { "SIS", " I ", " I ", 'S', steel, 'I', Item.ingotIron});
 		} else {
 			System.err.println("[EnhancedGeology] Impossibile registrare acciaio, disabilitate recipe per il BOS");
 		}
@@ -354,11 +359,13 @@ public class CraftingHandler {
 
 		// UF6 -> UF6LE
 		GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.UF6Nat, 1), 0, new ItemStack(Items.UF6LE), null, null,
-				null, 18000);
+				null, 6000);
 
 		// UF6LE -> UF6HE
 		GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.UF6LE, 1), 0, new ItemStack(Items.UF6HE), null, null,
 				null, 72000);
+		
+		
 		// UF6LE -> LEU
 
 		ic2.api.Ic2Recipes.addExtractorRecipe(new ItemStack(Items.UF6LE), new ItemStack(Items.LEU));
@@ -404,10 +411,8 @@ public class CraftingHandler {
 		// HECellx2 -> HECellx4
 		GameRegistry.addShapedRecipe(new ItemStack(Items.HECellx4, 1),
 				new Object[] { " C ", "PPP", " C ", 'C', Items.HECellx2, 'P', Items.ZircaloyPlate });
-
+		
 		//TRAPANO A BENZINA
-		
-		
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Items.GasDrill, 1, Items.GasDrill.getMaxDamage() - 1),
 				new Object [] { 
@@ -419,7 +424,15 @@ public class CraftingHandler {
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.GasDrill, 1, 0), new Object[] {new ItemStack(Items.Miscela, 1), new ItemStack(Items.GasDrill, 1, Items.GasDrill.getMaxDamage() - 1)});
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] {new ItemStack(Items.AcetyleneCell), new ItemStack(Items.OxygenCell), new ItemStack(Items.OxyFuelTorch, 1, Items.OxyFuelTorch.getMaxDamage() - 1)});
 
+		GameRegistry.addSmelting(Items.LOXCell.itemID, new ItemStack(Items.OxygenCell, 4, 0), 0.3f);
+		
+		GregtechCompat.addChemicalRecipe(GregtechCompat.getGregTechItem(2, 1, 9), GregtechCompat.getGregTechItem(2, 1, 9), new ItemStack(Items.AcetyleneCell), 100);
+		
+		GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', ic2.api.Items.getItem("copperIngot"), 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'I', Items.OxygenCell});
+	
+		
 		cell.stackSize = 1;	
 		GregtechCompat.addCannerRecipe(ic2.api.Items.getItem("filledFuelCan"), GregtechCompat.getGregTechItem(2, 1, 24),
 		new ItemStack(Items.Miscela, 1), cell, 100, 1);

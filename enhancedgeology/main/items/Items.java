@@ -18,23 +18,32 @@ import enhancedgeology.main.radiology.ItemUF6;
 import enhancedgeology.main.tools.ToolBateia;
 import enhancedgeology.main.tools.ToolConduttimetro;
 import enhancedgeology.main.tools.ToolContatoreGeiger;
+import enhancedgeology.main.tools.ToolGasDrill;
+import enhancedgeology.main.tools.ToolGlassHammer;
 import enhancedgeology.main.tools.ToolGravimetro;
+import enhancedgeology.main.tools.ToolHammerDrill;
+import enhancedgeology.main.tools.ToolMartelloGeologo;
+import enhancedgeology.main.tools.ToolOxyFuelTorch;
 
 public class Items {
 	
 	//ITEMS
-	public static Item GasDrill, MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
+	public static Item GlassHammer, GasDrill, HammerDrill, SDSHammerDrill, OxyFuelTorch, MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
 	Zirconio, Zircaloy, ZircaloyPlate, Miscela,
-	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps;
+	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell;
  
 	public static void InizializzaItem() {
 
 	String texture = "/enhancedgeology/textures/oggetti.png";	
 	
-	MartelloGeologo = new ItemMartelloGeologo(16030, EnumToolMaterial.EMERALD);
-	GasDrill = new ItemGasDrill(16031, EnumToolMaterial.IRON);
+	MartelloGeologo = new ToolMartelloGeologo(16030, EnumToolMaterial.EMERALD);
+	GasDrill = new ToolGasDrill(16031, EnumToolMaterial.IRON);
+	GlassHammer = new ToolGlassHammer(16029, EnumToolMaterial.IRON);
+	//HammerDrill = new ToolHammerDrill(16028, EnumToolMaterial.IRON);
+	//SDSHammerDrill = new ToolSDSHammerDrill(16027, EnumToolMaterial.IRON);
+	OxyFuelTorch = new ToolOxyFuelTorch(16026, EnumToolMaterial.IRON);
 	
 	/*Fluoro = new Item(16033).setTextureFile(texture).setIconIndex(16).setCreativeTab(CreativeTab.tabEnhancedGeologyAltro)
 			.setItemName("Fluoro");
@@ -48,7 +57,10 @@ public class Items {
 	UO2 = new ItemOggetto(16034, 17, "UO2", 64);
 	LOXCell = new ItemOggetto(16035, 21, "LOXCell", 64);
 	Miscela = new ItemOggettoContainer(16036, 10, "Miscela", 4, ic2.api.Items.getItem("fuelCan").getItem());
-		
+	OxygenCell = new ItemOggetto(16037, 22, "OxygenCell", 64);
+	AcetyleneCell = new ItemOggetto(16038, 23, "AcetyleneCell", 64);
+	
+	
 	UF6Nat = new ItemUF6(16100, 18, "UF6Nat");
 	UF6LE = new ItemUF6(16101, 19, "UF6LE");
 	UF6HE = new ItemUF6(16102, 20, "UF6HE");
@@ -101,8 +113,12 @@ public class Items {
 	
 	
 	public static void RegistraLingua() {
+		
+		LanguageRegistry.addName(OxyFuelTorch, "Oxy-fuel Cutting Torch");
+		LanguageRegistry.addName(GlassHammer, "Glass Hammer");
 		LanguageRegistry.addName(GasDrill, "Gas-powered Drill");
 		LanguageRegistry.addName(MartelloGeologo, "Martello da geologo");
+		//LanguageRegistry.addName(HammerDrill, "Hammer Drill");
 		
 		LanguageRegistry.addName(Biotite, "Biotite");
 		LanguageRegistry.addName(Muscovite, "Muscovite");
@@ -119,6 +135,8 @@ public class Items {
 		LanguageRegistry.addName(Fluoro, "Fluorine Cell");
 		LanguageRegistry.addName(LOXCell, "Liquid Oxygen Cell");
 		LanguageRegistry.addName(Miscela, "Gasoline Mixture");
+		LanguageRegistry.addName(OxygenCell, "Oxygen Cell");
+		LanguageRegistry.addName(AcetyleneCell, "Acetylene Cell");
 		
 		LanguageRegistry.addName(U3O8, "U₃O₈ (Yellowcake)");
 		LanguageRegistry.addName(UO2, "UO₂");
