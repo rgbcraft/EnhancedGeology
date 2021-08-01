@@ -70,11 +70,11 @@ public class Items {
 	Feldspato = new ItemMinerale(16052, 2, "Feldspato", 64);
 	Magnetite = new ItemMinerale(16053, 3, "Magnetite", 64);
 	Ematite = new ItemMinerale(16054, 4, "Ematite", 64);
-	Zircone = new ItemMinerale(16055, 5, "Zircone", 16);
+	Zircone = new ItemMinerale(16055, 5, "Zircone", 64);
 	Serpentino = new ItemMinerale(16056, 6, "Serpentino", 64);
-	Crisotilo = new ItemMinerale(16057, 7, "Crisotilo", 32);
+	Crisotilo = new ItemMinerale(16057, 7, "Crisotilo", 64);
 	Orneblenda = new ItemMinerale(16058, 8, "Orneblenda", 64);
-	Brucite = new ItemMinerale(16059, 9, "Brucite", 32);
+	Brucite = new ItemMinerale(16059, 9, "Brucite", 64);
 	Fluorite = new ItemMinerale(16060, 10, "Fluorite", 64);
 	
 	

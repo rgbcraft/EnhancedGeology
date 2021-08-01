@@ -430,7 +430,7 @@ public class CraftingHandler {
 		
 		GregtechCompat.addChemicalRecipe(GregtechCompat.getGregTechItem(2, 1, 9), GregtechCompat.getGregTechItem(2, 1, 9), new ItemStack(Items.AcetyleneCell), 100);
 		
-		GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', ic2.api.Items.getItem("copperIngot"), 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'I', Items.OxygenCell});
+		GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', ic2.api.Items.getItem("copperIngot"), 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
 	
 		
 		cell.stackSize = 1;	
