@@ -41,7 +41,7 @@ public class Items {
 	MartelloGeologo = new ToolMartelloGeologo(16030, EnumToolMaterial.EMERALD);
 	GasDrill = new ToolGasDrill(16031, EnumToolMaterial.IRON);
 	GlassHammer = new ToolGlassHammer(16029, EnumToolMaterial.IRON);
-	//HammerDrill = new ToolHammerDrill(16028, EnumToolMaterial.IRON);
+	HammerDrill = new ToolHammerDrill(16028, EnumToolMaterial.IRON);
 	//SDSHammerDrill = new ToolSDSHammerDrill(16027, EnumToolMaterial.IRON);
 	OxyFuelTorch = new ToolOxyFuelTorch(16026, EnumToolMaterial.IRON);
 	
@@ -118,7 +118,7 @@ public class Items {
 		LanguageRegistry.addName(GlassHammer, "Glass Hammer");
 		LanguageRegistry.addName(GasDrill, "Gas-powered Drill");
 		LanguageRegistry.addName(MartelloGeologo, "Martello da geologo");
-		//LanguageRegistry.addName(HammerDrill, "Hammer Drill");
+		LanguageRegistry.addName(HammerDrill, "Hammer Drill");
 		
 		LanguageRegistry.addName(Biotite, "Biotite");
 		LanguageRegistry.addName(Muscovite, "Muscovite");

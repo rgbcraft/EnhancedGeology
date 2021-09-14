@@ -133,8 +133,8 @@ public class CraftingHandler {
 				new ItemStack(Blocks.materiale, 1, 1));
 
 		// Granito levigato
-		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.roccia, 1, 3),
-				new ItemStack(Blocks.materiale, 1, 3));
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.roccia, 1, 2),
+				new ItemStack(Blocks.materiale, 1, 2));
 
 		// Tetto Amianto
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.TettoAmianto, 16),
@@ -432,6 +432,15 @@ public class CraftingHandler {
 		
 		GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', ic2.api.Items.getItem("copperIngot"), 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
 	
+		
+		// TRAPANO 
+		
+		ic2.api.Ic2Recipes.addCraftingRecipe(new ItemStack(Items.HammerDrill, 1),
+				new Object [] {
+						" S ", "S# ", " S ",
+						'#', ic2.api.Items.getItem("miningDrill"),
+						'S', GregtechCompat.getGregTechItem(0, 1, 6) 
+				});
 		
 		cell.stackSize = 1;	
 		GregtechCompat.addCannerRecipe(ic2.api.Items.getItem("filledFuelCan"), GregtechCompat.getGregTechItem(2, 1, 24),

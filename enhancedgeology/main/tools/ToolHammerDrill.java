@@ -12,6 +12,7 @@ import ic2.api.IElectricItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -20,43 +21,50 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class ToolHammerDrill extends ItemPickaxe implements IElectricItem {
-
-	final static int MAXDAMAGE = 13;
-
 	
 	public ToolHammerDrill(int par1, EnumToolMaterial par2) {
 		super(par1, par2);
-		this.canRepair = false;
+
 		this.setTextureFile("/enhancedgeology/textures/oggetti.png");
-		this.setIconIndex(1);
-		this.setMaxDamage(MAXDAMAGE);
+		this.setIconIndex(13);
 		this.setCreativeTab(CreativeTab.tabEnhancedGeologyAltro);
 		this.setItemName("HammerDrill");
 		this.setMaxStackSize(1);
-		this.setNoRepair();
+        this.setMaxDamage(27);
+        this.setNoRepair();
 
 	}
-	/*
+
+
 	@Override
 	public float getStrVsBlock(ItemStack is, Block par2Block) {
-		
-		if (is.getItemDamage() == (MAXDAMAGE - 1)) {
-			return 0.1F;
+		if (this.canTakeDamage(is, 10)) {
+			if (par2Block.blockID == 4058)
+				return super.getStrVsBlock(is, par2Block) + 500.0f;
 		}
-		return par2Block != null && (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.anvil || par2Block.blockMaterial == Material.rock) ? 50.0F : 0.1F;
+		return 0.5f;
 	}
-	*/
+
+	@Override
+	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving) {
+		if (par7EntityLiving instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) par7EntityLiving;
+			if (!player.capabilities.isCreativeMode) {
+				this.damage(par1ItemStack, 10, player);
+			}
+		}
+		return true;
+	}
 	
 
 	private boolean canTakeDamage(ItemStack stack, int amount) {
-		amount *= 50;
-		return ElectricItem.discharge(stack, amount, Integer.MAX_VALUE, true, true) == amount;
-	}
+        amount *= 50;
+        return ElectricItem.discharge(stack, amount, Integer.MAX_VALUE, true, true) == amount;
+    }
 
-	private void damage(final ItemStack is, final int damage, final EntityPlayer player) {
-		ElectricItem.use(is, 50 * damage, player);
-	}
-
+    private void damage(ItemStack itemStack, int amount, EntityPlayer player) {
+        ElectricItem.use(itemStack, 50 * amount, player);
+    }
 
 	@Override
 	public boolean canProvideEnergy() {
@@ -75,7 +83,7 @@ public class ToolHammerDrill extends ItemPickaxe implements IElectricItem {
 
 	@Override
 	public int getMaxCharge() {
-		return 5000;
+		return 25000;
 	}
 
 	@Override
