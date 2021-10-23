@@ -35,5 +35,7 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("cellLiquidOxygen", Items.LOXCell);
 		OreDictionary.registerOre("cellOxygen", Items.OxygenCell);
 		OreDictionary.registerOre("cellAcetylene", Items.AcetyleneCell);
+		OreDictionary.registerOre("ingotDuralumin", Items.Duralumin);
+		OreDictionary.registerOre("dustAlloy2014", Items.AlloyMixture2014);
 	}
 }

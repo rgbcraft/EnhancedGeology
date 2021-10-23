@@ -24,6 +24,7 @@ import enhancedgeology.main.tools.ToolGravimetro;
 import enhancedgeology.main.tools.ToolHammerDrill;
 import enhancedgeology.main.tools.ToolMartelloGeologo;
 import enhancedgeology.main.tools.ToolOxyFuelTorch;
+import enhancedgeology.main.tools.ToolSDSHammerDrill;
 
 public class Items {
 	
@@ -32,7 +33,7 @@ public class Items {
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
 	Zirconio, Zircaloy, ZircaloyPlate, Miscela,
-	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell;
+	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell,Duralumin,AlloyMixture2014;
  
 	public static void InizializzaItem() {
 
@@ -42,7 +43,7 @@ public class Items {
 	GasDrill = new ToolGasDrill(16031, EnumToolMaterial.IRON);
 	GlassHammer = new ToolGlassHammer(16029, EnumToolMaterial.IRON);
 	HammerDrill = new ToolHammerDrill(16028, EnumToolMaterial.IRON);
-	//SDSHammerDrill = new ToolSDSHammerDrill(16027, EnumToolMaterial.IRON);
+	SDSHammerDrill = new ToolSDSHammerDrill(16027, EnumToolMaterial.IRON);
 	OxyFuelTorch = new ToolOxyFuelTorch(16026, EnumToolMaterial.IRON);
 	
 	/*Fluoro = new Item(16033).setTextureFile(texture).setIconIndex(16).setCreativeTab(CreativeTab.tabEnhancedGeologyAltro)
@@ -86,7 +87,9 @@ public class Items {
 	Zircaloy = new ItemOggetto(16222, 50, "Zircaloy", 64);
 	ZircaloyPlate = new ItemOggetto(16223, 82, "ZircaloyPlate", 64);
 	IronScraps = new ItemOggetto(16224, 96, "IronScraps", 64);
-	
+	Duralumin = new ItemOggetto(16225, 51, "Duralumin", 64);
+	AlloyMixture2014 = new ItemOggetto(16226, 97, "AlloyMixture2014", 64);
+
 	LECell = new ItemLECell(16200);
 	LECellx2 = new ItemLECellx2(16201);
 	LECellx4 = new ItemLECellx4(16202);
@@ -114,11 +117,13 @@ public class Items {
 	
 	public static void RegistraLingua() {
 		
+	
 		LanguageRegistry.addName(OxyFuelTorch, "Oxy-fuel Cutting Torch");
 		LanguageRegistry.addName(GlassHammer, "Glass Hammer");
 		LanguageRegistry.addName(GasDrill, "Gas-powered Drill");
 		LanguageRegistry.addName(MartelloGeologo, "Martello da geologo");
 		LanguageRegistry.addName(HammerDrill, "Hammer Drill");
+		LanguageRegistry.addName(SDSHammerDrill, "SDS Hammer Drill");
 		
 		LanguageRegistry.addName(Biotite, "Biotite");
 		LanguageRegistry.addName(Muscovite, "Muscovite");
@@ -149,7 +154,9 @@ public class Items {
 		LanguageRegistry.addName(Zirconio, "Zirconio");
 		LanguageRegistry.addName(Zircaloy, "Zircaloy 4");
 		LanguageRegistry.addName(ZircaloyPlate, "Zircaloy 4 Plate");
+		LanguageRegistry.addName(Duralumin, "Duralumin Ingot");
 		
+		LanguageRegistry.addName(AlloyMixture2014, "Alloy Mixture N°2014");
 		LanguageRegistry.addName(IronScraps, "Iron Ore Scraps");
 		
 		LanguageRegistry.addName(LECell, "Lightly Enriched Uranium Cell");
@@ -164,6 +171,7 @@ public class Items {
 		LanguageRegistry.addName(Conduttimetro, "Conduttimetro");
 		LanguageRegistry.addName(ContatoreGeiger, "Contatore Geiger");
 		LanguageRegistry.addName(Bateia, "Bateia");		
+		
 	}
 }
 

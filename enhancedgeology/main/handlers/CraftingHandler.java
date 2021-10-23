@@ -75,6 +75,28 @@ public class CraftingHandler {
 		
 		GregtechCompat.addBlastRecipe(new ItemStack(Items.IronScraps, 64), GregtechCompat.getGregTechItem(1, 16, 4), new ItemStack(Item.ingotIron, 64), GregtechCompat.getGregTechItem(1, 2, 63), 900, 1280, 1900);
 		
+		
+		//ALLUMINIO
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.AlloyMixture2014, 1), new Object[] {
+			GregtechCompat.getGregTechItem(1, 1, 243), 
+			GregtechCompat.getGregTechItem(1, 1, 13),
+			GregtechCompat.getGregTechItem(1, 1, 12),
+			GregtechCompat.getGregTechItem(1, 1, 241),
+			GregtechCompat.getGregTechItem(1, 1, 4)
+		});
+				
+		
+		GregtechCompat.addBlastRecipe(GregtechCompat.getGregTechItem(1, 64, 18),
+				new ItemStack(Items.AlloyMixture2014, 5),
+				new ItemStack(Items.Duralumin, 64),
+				GregtechCompat.getGregTechItem(1, 5, 63),
+				400, 1600, 950);
+		ItemStack inox = ic2.api.Items.getItem("refinedIronIngot").copy();
+		inox.stackSize = 64;
+		
+		GregtechCompat.addVacuumFreezerRecipe(new ItemStack(Items.Duralumin, 64), inox, 1500);
+		
 		//
 		// RECIPE CRAFTING
 		//
@@ -442,6 +464,13 @@ public class CraftingHandler {
 						'S', GregtechCompat.getGregTechItem(0, 1, 6) 
 				});
 		
+		ic2.api.Ic2Recipes.addCraftingRecipe(new ItemStack(Items.SDSHammerDrill, 1),
+				new Object [] {
+						" S ", "S# ", " S ",
+						'#', ic2.api.Items.getItem("diamondDrill"),
+						'S', GregtechCompat.getGregTechItem(0, 1, 6) 
+				});
+		
 		cell.stackSize = 1;	
 		GregtechCompat.addCannerRecipe(ic2.api.Items.getItem("filledFuelCan"), GregtechCompat.getGregTechItem(2, 1, 24),
 		new ItemStack(Items.Miscela, 1), cell, 100, 1);
@@ -450,6 +479,8 @@ public class CraftingHandler {
 		GregtechCompat.addCannerRecipe(ic2.api.Items.getItem("fuelCan"),
 				GregtechCompat.getGregTechItem(2, 8, 35),
 		new ItemStack(Items.Miscela, 1), cell, 100, 1);
+		
+		
 		
 		
 	}
