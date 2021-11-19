@@ -47,6 +47,17 @@ public class CraftingHandler {
 			System.err.println("[EnhancedGeology] Impossibile registrare acido solforico, disabilitata recipe secondaria UO2");
 		}
 		
+		//Crafting con Ore Dictionary per la fiamma ossidrica
+		ores = OreDictionary.getOres("ingotCopper");
+		if ( ores.size() > 0 ) {
+			ItemStack copper = ores.get(0);
+					GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', copper, 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
+		} else {
+			System.err.println("[EnhancedGeology] Impossibile registrare copperIngot, disabilitata fiamma ossidrica");
+		}
+		
+		
+		
 		//BASIC OXYGEN STEELMAKING
 		
 		//Ossigeno Liquido
@@ -452,7 +463,8 @@ public class CraftingHandler {
 		
 		GregtechCompat.addChemicalRecipe(GregtechCompat.getGregTechItem(2, 1, 9), GregtechCompat.getGregTechItem(2, 1, 9), new ItemStack(Items.AcetyleneCell), 100);
 		
-		GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', ic2.api.Items.getItem("copperIngot"), 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
+		
+		
 	
 		
 		// TRAPANO 
