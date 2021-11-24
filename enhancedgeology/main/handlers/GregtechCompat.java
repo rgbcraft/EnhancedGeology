@@ -12,12 +12,12 @@ public class GregtechCompat {
 	 * @return The ItemStack you ordered, if not then look at the Log.
 	 */
 	public static ItemStack getGregTechItem(int aIndex, int aAmount, int aMeta) {
-			try {
-				return (ItemStack)Class.forName("gregtechmod.GT_Mod").getMethod("getGregTechItem", int.class, int.class, int.class).invoke(null, aIndex, aAmount, aMeta);
-			} catch (Exception e) {}
+		try {
+			return (ItemStack)Class.forName("gregtechmod.GT_Mod").getMethod("getGregTechItem", int.class, int.class, int.class).invoke(null, aIndex, aAmount, aMeta);
+		} catch (Exception e) {}
 		return null;
 	}
-	
+
 	/**
 	 * Adds a CentrifugeRecipe
 	 * @param aInput1 must be != null
@@ -105,7 +105,7 @@ public class GregtechCompat {
 		} catch (Exception e) {}
 		return false;
 	}
-	
+
 	/**
 	 * Adds a Canning Machine Recipe
 	 * @param aInput1 must be != null
@@ -114,25 +114,25 @@ public class GregtechCompat {
 	 * @param aEUt should be > 0, 1 EU/t is standard.
 	 */
 	public static boolean addCannerRecipe(ItemStack aInput1, ItemStack aInput2, ItemStack aOutput1, ItemStack aOutput2, int aDuration, int aEUt) {
-			try {
-				Class.forName("gregtechmod.GT_Mod").getMethod("addCannerRecipe", ItemStack.class, ItemStack.class, ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aOutput2, aDuration, aEUt);
-				return true;
-			} catch (Exception e) {}
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addCannerRecipe", ItemStack.class, ItemStack.class, ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aOutput2, aDuration, aEUt);
+			return true;
+		} catch (Exception e) {}
 		return false;
 	}
-	
+
 	/**
 	 * Adds a BlockID to the List of the Minable Blocks by the Jackhammer
 	 * @param aBlock
 	 */
 	public static boolean addJackHammerMinableBlock(Block aBlock) {
-			try {
-				Class.forName("gregtechmod.GT_Mod").getMethod("addJackHammerMinableBlock", Block.class).invoke(null, aBlock);
-				return true;
-			} catch (Exception e) {}
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addJackHammerMinableBlock", Block.class).invoke(null, aBlock);
+			return true;
+		} catch (Exception e) {}
 		return false;
 	}
-	
+
 	/**
 	 * Adds a Chemical Recipe
 	 * @param aInput1 must be != null
@@ -141,13 +141,13 @@ public class GregtechCompat {
 	 * @param aDuration must be > 0
 	 */
 	public static boolean addChemicalRecipe(ItemStack aInput1, ItemStack aInput2, ItemStack aOutput1, int aDuration) {
-			try {
-				Class.forName("gregtechmod.GT_Mod").getMethod("addChemicalRecipe", ItemStack.class, ItemStack.class, ItemStack.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aDuration);
-				return true;
-			} catch (Exception e) {}
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addChemicalRecipe", ItemStack.class, ItemStack.class, ItemStack.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aDuration);
+			return true;
+		} catch (Exception e) {}
 		return false;
 	}
-	
+
 	/**
 	 * Adds a Plate Bending Machine Recipe
 	 * @param aInput1 must be != null
@@ -156,13 +156,13 @@ public class GregtechCompat {
 	 * @param aEUt should be > 0
 	 */
 	public static boolean addBenderRecipe(ItemStack aInput1, ItemStack aOutput1, int aDuration, int aEUt) {
-			try {
-				Class.forName("gregtechmod.GT_Mod").getMethod("addBenderRecipe", ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aOutput1, aDuration, aEUt);
-				return true;
-			} catch (Exception e) {}
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addBenderRecipe", ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aOutput1, aDuration, aEUt);
+			return true;
+		} catch (Exception e) {}
 		return false;
 	}
-	
+
 	/**
 	 * Adds a Vacuum Freezer Recipe
 	 * @param aInput1 must be != null
@@ -170,10 +170,26 @@ public class GregtechCompat {
 	 * @param aDuration must be > 0
 	 */
 	public static boolean addVacuumFreezerRecipe(ItemStack aInput1, ItemStack aOutput1, int aDuration) {
-			try {
-				Class.forName("gregtechmod.GT_Mod").getMethod("addVacuumFreezerRecipe", ItemStack.class, ItemStack.class, int.class).invoke(null, aInput1, aOutput1, aDuration);
-				return true;
-			} catch (Exception e) {}
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addVacuumFreezerRecipe", ItemStack.class, ItemStack.class, int.class).invoke(null, aInput1, aOutput1, aDuration);
+			return true;
+		} catch (Exception e) {}
+		return false;
+	}
+
+	/**
+	 * Adds an Alloy Smelter Recipe
+	 * @param aInput1 must be != null
+	 * @param aOutput1 must be != null
+	 * @param aDuration must be > 0
+	 * @param aEUt should be > 0
+	 */
+	public static boolean addAlloySmelterRecipe(ItemStack aInput1, ItemStack aInput2, ItemStack aOutput1, int aDuration, int aEUt) {
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addAlloySmelterRecipe", ItemStack.class, ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aDuration, aEUt);
+			return true;
+		} catch (Exception e) {}
+
 		return false;
 	}
 }

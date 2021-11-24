@@ -33,7 +33,7 @@ public class Items {
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
 	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
 	Zirconio, Zircaloy, ZircaloyPlate, Miscela,
-	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell,Duralumin,AlloyMixture2014;
+	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell,Duralumin,AlloyMixture2014, CopperSulfate, CopperOxide;
  
 	public static void InizializzaItem() {
 
@@ -89,7 +89,9 @@ public class Items {
 	IronScraps = new ItemOggetto(16224, 96, "IronScraps", 64);
 	Duralumin = new ItemOggetto(16225, 51, "Duralumin", 64);
 	AlloyMixture2014 = new ItemOggetto(16226, 97, "AlloyMixture2014", 64);
-
+	CopperSulfate = new ItemOggetto(16227, 67, "CopperSulfate", 64);
+	CopperOxide = new ItemOggetto(16228, 68, "CopperOxide", 64);
+	
 	LECell = new ItemLECell(16200);
 	LECellx2 = new ItemLECellx2(16201);
 	LECellx4 = new ItemLECellx4(16202);
@@ -105,6 +107,8 @@ public class Items {
 	ContatoreGeiger = new ToolContatoreGeiger(16302);
 	Bateia = new ToolBateia(16303);
 	Bateia.setContainerItem(Bateia);
+	
+	
 	GameRegistry.registerItem(Gravimetro, "Gravimetro");
 	GameRegistry.registerItem(Conduttimetro, "Conduttimetro");
 	GameRegistry.registerItem(ContatoreGeiger, "ContatoreGeiger");
@@ -127,13 +131,13 @@ public class Items {
 		
 		LanguageRegistry.addName(Biotite, "Biotite");
 		LanguageRegistry.addName(Muscovite, "Muscovite");
-		LanguageRegistry.addName(Feldspato, "Feldspato");
+		LanguageRegistry.addName(Feldspato, "Feldspar");
 		LanguageRegistry.addName(Magnetite, "Magnetite");
 		LanguageRegistry.addName(Ematite, "Ematite");
-		LanguageRegistry.addName(Zircone, "Zircone");
-		LanguageRegistry.addName(Serpentino, "Serpentino");
-		LanguageRegistry.addName(Crisotilo, "Crisotilo");
-		LanguageRegistry.addName(Orneblenda, "Orneblenda");
+		LanguageRegistry.addName(Zircone, "Zircon");
+		LanguageRegistry.addName(Serpentino, "Serpentine");
+		LanguageRegistry.addName(Crisotilo, "Chrysotile");
+		LanguageRegistry.addName(Orneblenda, "Orneblende");
 		LanguageRegistry.addName(Brucite, "Brucite");
 		LanguageRegistry.addName(Fluorite, "Fluorite");
 		
@@ -147,14 +151,16 @@ public class Items {
 		LanguageRegistry.addName(UO2, "UO₂");
 		LanguageRegistry.addName(LEU, "Lightly Enriched Uranium");
 		LanguageRegistry.addName(HEU, "Highly Enriched Uranium");
-		LanguageRegistry.addName(UF6Nat, "UF₆ (naturale)");
+		LanguageRegistry.addName(UF6Nat, "UF₆ (natural)");
 		LanguageRegistry.addName(UF6LE, "UF₆ (lightly enr.)");
 		LanguageRegistry.addName(UF6HE, "UF₆ (highly enr.)");
 		
-		LanguageRegistry.addName(Zirconio, "Zirconio");
+		LanguageRegistry.addName(Zirconio, "Zirconium Dust");
 		LanguageRegistry.addName(Zircaloy, "Zircaloy 4");
 		LanguageRegistry.addName(ZircaloyPlate, "Zircaloy 4 Plate");
 		LanguageRegistry.addName(Duralumin, "Duralumin Ingot");
+		LanguageRegistry.addName(CopperSulfate, "Copper Sulfate Dust");
+		LanguageRegistry.addName(CopperOxide, "Copper (II) Oxide Dust");
 		
 		LanguageRegistry.addName(AlloyMixture2014, "Alloy Mixture N°2014");
 		LanguageRegistry.addName(IronScraps, "Iron Ore Scraps");

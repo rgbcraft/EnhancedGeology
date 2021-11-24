@@ -47,13 +47,16 @@ public class CraftingHandler {
 			System.err.println("[EnhancedGeology] Impossibile registrare acido solforico, disabilitata recipe secondaria UO2");
 		}
 		
-		//Crafting con Ore Dictionary per la fiamma ossidrica
+		//Crafting con Ore Dictionary per la fiamma ossidrica e il CuSO4
 		ores = OreDictionary.getOres("ingotCopper");
 		if ( ores.size() > 0 ) {
 			ItemStack copper = ores.get(0);
 					GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', copper, 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
+					//Termite
+					copper.stackSize = 3;
+					GregtechCompat.addAlloySmelterRecipe(new ItemStack(Items.CopperOxide, 3), GregtechCompat.getGregTechItem(1, 2, 18), copper, 40, 3);
 		} else {
-			System.err.println("[EnhancedGeology] Impossibile registrare copperIngot, disabilitata fiamma ossidrica");
+			System.err.println("[EnhancedGeology] Impossibile registrare copperIngot, disabilitata fiamma ossidrica e Termite");
 		}
 		
 		
@@ -364,10 +367,39 @@ public class CraftingHandler {
 		GregtechCompat.addElectrolyzerRecipe(new ItemStack(Items.Fluorite, 3), 4, new ItemStack(Items.Fluoro, 2),
 				GregtechCompat.getGregTechItem(2, 2, 11), null, null, 6500, 45);
 
+		//Decomposizione CuSO4
+		
+		GameRegistry.addSmelting(Items.CopperSulfate.itemID, new ItemStack(Items.CopperOxide, 1), 0.30f);
+		
 		/*
 		 * PARTE RADIOLOGICA
 		 */
-
+		
+		
+		// SVUOTAMENTO CELLE TRAMITE REAZIONE DI IDROLISI IN EAF (con produzione di Idrogeno)
+		
+		//NON DOCUMENTATO: reactorUraniumSimple, Dual e Quad
+		//HEU
+		ItemStack waterCellStack = ic2.api.Items.getItem("waterCell").copy();				
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.HECell, 1), waterCellStack, new ItemStack(Items.HEU, 1), GregtechCompat.getGregTechItem(2, 1, 0), 700, 440, 1060);
+		waterCellStack.stackSize = 2;
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.HECellx2, 1), waterCellStack, new ItemStack(Items.HEU, 2), GregtechCompat.getGregTechItem(2, 2, 0), 600, 440, 1060);
+		waterCellStack.stackSize = 4;
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.HECellx4, 1), waterCellStack, new ItemStack(Items.HEU, 4), GregtechCompat.getGregTechItem(2, 4, 0), 500, 440, 1060);
+		
+		//LEU e naturali con ricetta con dissoluzione di Cu in H2SO4
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.LECell, 1), GregtechCompat.getGregTechItem(2, 1, 40), new ItemStack(Items.LEU, 1), new ItemStack(Items.CopperSulfate, 2), 700, 20, 400);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.LECellx2, 1), GregtechCompat.getGregTechItem(2, 2, 40), new ItemStack(Items.LEU, 2), new ItemStack(Items.CopperSulfate, 4), 600, 20, 400);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.LECellx4, 1), GregtechCompat.getGregTechItem(2, 4, 40), new ItemStack(Items.LEU, 4), new ItemStack(Items.CopperSulfate, 6), 500, 20, 400);
+		
+		ItemStack uraniumIngot = ic2.api.Items.getItem("uraniumIngot").copy();				
+		GregtechCompat.addBlastRecipe(ic2.api.Items.getItem("reactorUraniumSimple"), GregtechCompat.getGregTechItem(2, 1, 40), uraniumIngot, new ItemStack(Items.CopperSulfate, 2), 700, 20, 400);
+		uraniumIngot.stackSize = 2;
+		GregtechCompat.addBlastRecipe(ic2.api.Items.getItem("reactorUraniumDual"), GregtechCompat.getGregTechItem(2, 4, 40), uraniumIngot, new ItemStack(Items.CopperSulfate, 8), 600, 20, 400);
+		uraniumIngot.stackSize = 4;
+		GregtechCompat.addBlastRecipe(ic2.api.Items.getItem("reactorUraniumQuad"), GregtechCompat.getGregTechItem(2, 12, 40), uraniumIngot, new ItemStack(Items.CopperSulfate, 24), 500, 20, 400);
+	
+		
 		// Uranite -> U3O8
 		GregtechCompat.addGrinderRecipe(new ItemStack(Blocks.roccia, 5, 10), 0,
 				GregtechCompat.getGregTechItem(1, 2, 244), GregtechCompat.getGregTechItem(1, 2, 23),
@@ -384,9 +416,10 @@ public class CraftingHandler {
 		// UO2 -> U naturale
 		GregtechCompat.addBlastRecipe(new ItemStack(Items.UO2, 1), GregtechCompat.getGregTechItem(2, 1, 0),
 				ic2.api.Items.getItem("uraniumIngot"), ic2.api.Items.getItem("waterCell"), 1200, 95, 973);
-
+		
 		// UO2 -> UF6
-
+	
+		
 		GregtechCompat.addChemicalRecipe(new ItemStack(Items.UO2, 64), new ItemStack(Items.Fluoro, 1),
 				new ItemStack(Items.UF6Nat, 64), 3100);
 
