@@ -49,9 +49,10 @@ public class CraftingHandler {
 		
 		//Crafting con Ore Dictionary per la fiamma ossidrica e il CuSO4
 		ores = OreDictionary.getOres("ingotCopper");
+		
 		if ( ores.size() > 0 ) {
 			ItemStack copper = ores.get(0);
-					GameRegistry.addRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', copper, 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
+					CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.OxyFuelTorch, 1, 0), new Object[] { " C ", " I ", "AIO", 'C', "ingotCopper", 'I', Item.ingotIron, 'A', Items.AcetyleneCell, 'O', Items.OxygenCell});
 					//Termite
 					copper.stackSize = 3;
 					GregtechCompat.addAlloySmelterRecipe(new ItemStack(Items.CopperOxide, 3), GregtechCompat.getGregTechItem(1, 2, 18), copper, 40, 3);
@@ -408,6 +409,10 @@ public class CraftingHandler {
 		// U3O8 -> UO2
 		GregtechCompat.addChemicalRecipe(new ItemStack(Items.U3O8, 1), GregtechCompat.getGregTechItem(2, 1, 40),
 				new ItemStack(Items.UO2), 3600);
+		
+		// ULE + Pu dust -> MOXIngot
+		
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.LEU, 44), GregtechCompat.getGregTechItem(1,  20, 81), new ItemStack(Items.MOX, 64), GregtechCompat.getGregTechItem(1, 1, 62), 600, 3100, 1400);
 
 		// U naturale -> UO2
 		GregtechCompat.addBlastRecipe(ic2.api.Items.getItem("uraniumIngot"), GregtechCompat.getGregTechItem(1, 1, 4),
@@ -431,6 +436,10 @@ public class CraftingHandler {
 		GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.UF6LE, 1), 0, new ItemStack(Items.UF6HE), null, null,
 				null, 72000);
 		
+		// UF6LE -> UF6MGE
+		GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.UF6HE, 1), 0, new ItemStack(Items.UF6MGE), null, null,
+				null, 10000);
+		
 		
 		// UF6LE -> LEU
 
@@ -440,6 +449,11 @@ public class CraftingHandler {
 
 		ic2.api.Ic2Recipes.addExtractorRecipe(new ItemStack(Items.UF6HE), new ItemStack(Items.HEU));
 
+		// UF6MGE -> MGEU
+		
+		ic2.api.Ic2Recipes.addExtractorRecipe(new ItemStack(Items.UF6MGE), new ItemStack(Items.MGEU));
+
+		
 		// LEU -> LECell
 
 		GregtechCompat.addCannerRecipe(new ItemStack(Items.LEU), ic2.api.Items.getItem("cell"),
@@ -449,6 +463,16 @@ public class CraftingHandler {
 
 		GregtechCompat.addCannerRecipe(new ItemStack(Items.HEU), ic2.api.Items.getItem("cell"),
 				new ItemStack(Items.HECell), null, 150, 45);
+		
+		// MGEU -> MGECell
+		
+		GregtechCompat.addCannerRecipe(new ItemStack(Items.MGEU), ic2.api.Items.getItem("cell"),
+				new ItemStack(Items.MGECell), null, 150, 70);
+		
+		// MOX -> MOXCell
+		
+		GregtechCompat.addCannerRecipe(new ItemStack(Items.MOX), ic2.api.Items.getItem("cell"),
+				new ItemStack(Items.MOXCell), null, 150, 110);
 
 		// Zircone -> Zirconio
 		GregtechCompat.addElectrolyzerRecipe(new ItemStack(Items.Zircone, 3), 0, new ItemStack(Items.Zirconio, 1),
@@ -477,6 +501,22 @@ public class CraftingHandler {
 		// HECellx2 -> HECellx4
 		GameRegistry.addShapedRecipe(new ItemStack(Items.HECellx4, 1),
 				new Object[] { " C ", "PPP", " C ", 'C', Items.HECellx2, 'P', Items.ZircaloyPlate });
+		
+		// MGECell -> MGECellx2
+				GameRegistry.addShapedRecipe(new ItemStack(Items.MGECellx2, 1),
+						new Object[] { "CPC", "   ", "   ", 'C', Items.MGECell, 'P', Items.ZircaloyPlate });
+
+		// MGECellx2 -> MGECellx4
+		GameRegistry.addShapedRecipe(new ItemStack(Items.MGECellx4, 1),
+						new Object[] { " C ", "PPP", " C ", 'C', Items.MGECellx2, 'P', Items.ZircaloyPlate });
+		
+		// MOXCell -> MOXCellx2
+		GameRegistry.addShapedRecipe(new ItemStack(Items.MOXCellx2, 1),
+				new Object[] { "CPC", "   ", "   ", 'C', Items.MOXCell, 'P', Items.ZircaloyPlate });
+
+		// MOXCellx2 -> MOXCellx4
+		GameRegistry.addShapedRecipe(new ItemStack(Items.MOXCellx4, 1),
+				new Object[] { " C ", "PPP", " C ", 'C', Items.MOXCellx2, 'P', Items.ZircaloyPlate });
 		
 		//TRAPANO A BENZINA
 		

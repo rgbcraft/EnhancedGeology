@@ -14,6 +14,12 @@ import enhancedgeology.main.radiology.ItemHECellx4;
 import enhancedgeology.main.radiology.ItemLECell;
 import enhancedgeology.main.radiology.ItemLECellx2;
 import enhancedgeology.main.radiology.ItemLECellx4;
+import enhancedgeology.main.radiology.ItemMGECell;
+import enhancedgeology.main.radiology.ItemMGECellx2;
+import enhancedgeology.main.radiology.ItemMGECellx4;
+import enhancedgeology.main.radiology.ItemMOXCell;
+import enhancedgeology.main.radiology.ItemMOXCellx2;
+import enhancedgeology.main.radiology.ItemMOXCellx4;
 import enhancedgeology.main.radiology.ItemUF6;
 import enhancedgeology.main.tools.ToolBateia;
 import enhancedgeology.main.tools.ToolConduttimetro;
@@ -31,7 +37,7 @@ public class Items {
 	//ITEMS
 	public static Item GlassHammer, GasDrill, HammerDrill, SDSHammerDrill, OxyFuelTorch, MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
 	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
-	U3O8, UO2, LEU, HEU, UF6Nat, UF6LE, UF6HE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4,
+	U3O8, UO2, LEU, HEU, MGEU, MOX, UF6Nat, UF6LE, UF6HE, UF6MGE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4, MGECell, MGECellx2, MGECellx4, MOXCell, MOXCellx2, MOXCellx4,
 	Zirconio, Zircaloy, ZircaloyPlate, Miscela,
 	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell,Duralumin,AlloyMixture2014, CopperSulfate, CopperOxide;
  
@@ -65,6 +71,7 @@ public class Items {
 	UF6Nat = new ItemUF6(16100, 18, "UF6Nat");
 	UF6LE = new ItemUF6(16101, 19, "UF6LE");
 	UF6HE = new ItemUF6(16102, 20, "UF6HE");
+	UF6MGE = new ItemUF6(16103, 24, "UF6MGE");
 	
 	Biotite = new ItemMinerale(16050, 0, "Biotite", 64);
 	Muscovite = new ItemMinerale(16051, 1, "Muscovite", 64);
@@ -80,8 +87,11 @@ public class Items {
 	
 	
 	U3O8 = new ItemMinerale(16211, 11, "U3O8", 8);
-	LEU = new ItemOggetto(16215, 48, "LEU", 64);
+	LEU = new ItemOggetto(16212, 48, "LEU", 64);
 	HEU = new ItemOggetto(16213, 49, "HEU", 64);
+	MGEU = new ItemOggetto(16214, 52, "MGEU", 64);
+	MOX = new ItemOggetto(16215, 53, "MOX", 64);
+
 	
 	Zirconio = new ItemOggetto(16221, 66, "Zirconio", 64);
 	Zircaloy = new ItemOggetto(16222, 50, "Zircaloy", 64);
@@ -100,7 +110,13 @@ public class Items {
 	HECellx2 = new ItemHECellx2(16204);
 	HECellx4 = new ItemHECellx4(16205);
 	
+	MGECell = new ItemMGECell(16206);
+	MGECellx2 = new ItemMGECellx2(16207);
+	MGECellx4 = new ItemMGECellx4(16208);
 	
+	MOXCell = new ItemMOXCell(16209);
+	MOXCellx2 = new ItemMOXCellx2(16210);
+	MOXCellx4 = new ItemMOXCellx4(16211);
 	
 	Gravimetro = new ToolGravimetro(16300);
 	Conduttimetro = new ToolConduttimetro(16301);
@@ -151,9 +167,12 @@ public class Items {
 		LanguageRegistry.addName(UO2, "UO₂");
 		LanguageRegistry.addName(LEU, "Lightly Enriched Uranium");
 		LanguageRegistry.addName(HEU, "Highly Enriched Uranium");
+		LanguageRegistry.addName(MGEU, "Military Grade Enriched Uranium");
+		LanguageRegistry.addName(MOX, "Mixed Oxides (MOX)");
 		LanguageRegistry.addName(UF6Nat, "UF₆ (natural)");
 		LanguageRegistry.addName(UF6LE, "UF₆ (lightly enr.)");
 		LanguageRegistry.addName(UF6HE, "UF₆ (highly enr.)");
+		LanguageRegistry.addName(UF6MGE, "UF₆ (military grade enr.)");
 		
 		LanguageRegistry.addName(Zirconio, "Zirconium Dust");
 		LanguageRegistry.addName(Zircaloy, "Zircaloy 4");
@@ -172,6 +191,14 @@ public class Items {
 		LanguageRegistry.addName(HECell, "Highly Enriched Uranium Cell");
 		LanguageRegistry.addName(HECellx2, "Dual Highly Enriched Uranium Cell");
 		LanguageRegistry.addName(HECellx4, "Quad Highly Enriched Uranium Cell");
+		
+		LanguageRegistry.addName(MGECell, "Military Grade Uranium Cell");
+		LanguageRegistry.addName(MGECellx2, "Dual Military Grade Uranium Cell");
+		LanguageRegistry.addName(MGECellx4, "Quad Military Grade Uranium Cell");
+		
+		LanguageRegistry.addName(MOXCell, "MOX Cell");
+		LanguageRegistry.addName(MOXCellx2, "Dual MOX Cell");
+		LanguageRegistry.addName(MOXCellx4, "Quad MOX Cell");
 		
 		LanguageRegistry.addName(Gravimetro, "Gravimetro");
 		LanguageRegistry.addName(Conduttimetro, "Conduttimetro");
