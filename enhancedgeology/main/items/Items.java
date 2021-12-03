@@ -114,9 +114,9 @@ public class Items {
 	MGECellx2 = new ItemMGECellx2(16207);
 	MGECellx4 = new ItemMGECellx4(16208);
 	
-	MOXCell = new ItemMOXCell(16209);
-	MOXCellx2 = new ItemMOXCellx2(16210);
-	MOXCellx4 = new ItemMOXCellx4(16211);
+	MOXCell = new ItemMOXCell(16240);
+	MOXCellx2 = new ItemMOXCellx2(16241);
+	MOXCellx4 = new ItemMOXCellx4(16242);
 	
 	Gravimetro = new ToolGravimetro(16300);
 	Conduttimetro = new ToolConduttimetro(16301);
