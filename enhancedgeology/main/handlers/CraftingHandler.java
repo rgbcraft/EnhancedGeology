@@ -416,6 +416,10 @@ public class CraftingHandler {
 
 		// U naturale -> UO2
 		GregtechCompat.addBlastRecipe(ic2.api.Items.getItem("uraniumIngot"), GregtechCompat.getGregTechItem(1, 1, 4),
+				new ItemStack(Items.UO2), null, 1200, 95, 973);		
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.LEU), GregtechCompat.getGregTechItem(1, 1, 4),
+				new ItemStack(Items.UO2), null, 1200, 95, 973);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.HEU), GregtechCompat.getGregTechItem(1, 1, 4),
 				new ItemStack(Items.UO2), null, 1200, 95, 973);
 
 		// UO2 -> U naturale

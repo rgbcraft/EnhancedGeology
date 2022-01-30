@@ -29,6 +29,8 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("gemBrucite", Items.Brucite);
 		OreDictionary.registerOre("ingotLeu", Items.LEU);
 		OreDictionary.registerOre("ingotHeu", Items.HEU);
+		OreDictionary.registerOre("ingotMgeu", Items.MGEU);
+		OreDictionary.registerOre("ingotMOX", Items.MOX);
 		OreDictionary.registerOre("dustZirconium", Items.Zirconio);
 		OreDictionary.registerOre("ingotZircaloy", Items.Zircaloy);
 		OreDictionary.registerOre("ironScraps", Items.IronScraps);
@@ -39,5 +41,7 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("dustAlloy2014", Items.AlloyMixture2014);
 		OreDictionary.registerOre("dustCopperSulfate", Items.CopperSulfate);
 		OreDictionary.registerOre("dustCopperOxide", Items.CopperOxide);
+		OreDictionary.registerOre("plateZircaloy4", Items.ZircaloyPlate);
+		OreDictionary.registerOre("canisterFuelMixture", Items.Miscela);
 	}
 }
