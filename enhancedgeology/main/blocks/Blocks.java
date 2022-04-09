@@ -43,7 +43,7 @@ public class Blocks {
 		LanguageRegistry.addName(new ItemStack(roccia, 1, 7), "Serpentinite");
 		LanguageRegistry.addName(new ItemStack(roccia, 1, 8), "Gneiss");
 		LanguageRegistry.addName(new ItemStack(roccia, 1, 9), "Kimberlite");
-		LanguageRegistry.addName(new ItemStack(roccia, 1, 10), "Uranite");
+		LanguageRegistry.addName(new ItemStack(roccia, 1, 10), "Uraninite");
 		
 		//materiali
 		

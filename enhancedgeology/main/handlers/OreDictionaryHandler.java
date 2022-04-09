@@ -1,6 +1,7 @@
 package enhancedgeology.main.handlers;
 
 import enhancedgeology.main.CreativeTab;
+import enhancedgeology.main.blocks.Blocks;
 import enhancedgeology.main.items.ItemMinerale;
 import enhancedgeology.main.items.ItemOggetto;
 import enhancedgeology.main.items.Items;
@@ -43,5 +44,16 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("dustCopperOxide", Items.CopperOxide);
 		OreDictionary.registerOre("plateZircaloy4", Items.ZircaloyPlate);
 		OreDictionary.registerOre("canisterFuelMixture", Items.Miscela);
+		OreDictionary.registerOre("rockAndesite", new ItemStack(Blocks.roccia, 1, 0));
+		OreDictionary.registerOre("rockDiorite", new ItemStack(Blocks.roccia, 1, 1));
+		OreDictionary.registerOre("rockGranito", new ItemStack(Blocks.roccia, 1, 2));
+		OreDictionary.registerOre("rockPeridotite", new ItemStack(Blocks.roccia, 1, 3));
+		OreDictionary.registerOre("rockArdesia", new ItemStack(Blocks.roccia, 1, 4));
+		OreDictionary.registerOre("rockDiasproRosso", new ItemStack(Blocks.roccia, 1, 5));
+		OreDictionary.registerOre("rockTufo", new ItemStack(Blocks.roccia, 1, 6));
+		OreDictionary.registerOre("rockSerpentinite", new ItemStack(Blocks.roccia, 1, 7));
+		OreDictionary.registerOre("rockGneiss", new ItemStack(Blocks.roccia, 1, 8));
+		OreDictionary.registerOre("rockKimberlite", new ItemStack(Blocks.roccia, 1, 9));
+		OreDictionary.registerOre("oreUraninite", new ItemStack(Blocks.roccia, 1, 10));
 	}
 }
