@@ -195,6 +195,10 @@ public class CraftingHandler {
 		//COMPATIBILITÀ PER IDIOZIE FATTE DAL CHICCO
 		GameRegistry.addShapelessRecipe(new ItemStack(Block.oreGold, 1), new ItemStack(Block.oreGold, 1, 5));
 		GameRegistry.addShapelessRecipe(new ItemStack(Block.oreIron, 1), new ItemStack(Block.oreIron, 1, 1));
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 1), new ItemStack(Item.redstone, 1, 3));
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.diamond, 1), new ItemStack(Item.diamond, 1, 6));
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.emerald, 1), new ItemStack(Item.emerald, 1, 4));
+
 		
 		/*
 		 * RICETTE DECOMPOSIZIONE ROCCE

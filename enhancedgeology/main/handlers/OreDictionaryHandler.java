@@ -23,6 +23,8 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("gemFeldspar", Items.Feldspato);
 		OreDictionary.registerOre("gemMagnetite", Items.Magnetite);
 		OreDictionary.registerOre("gemEmatite", Items.Ematite);
+		OreDictionary.registerOre("gemGoetite", Items.Goetite);
+		OreDictionary.registerOre("gemSiderite", Items.Siderite);
 		OreDictionary.registerOre("gemZircon", Items.Zircone);
 		OreDictionary.registerOre("gemSerpentine", Items.Serpentino);
 		OreDictionary.registerOre("gemChrysotile", Items.Crisotilo);

@@ -21,5 +21,7 @@ public class ItemOggetto extends Item {
 		this.setItemName(itemName);
 		this.setMaxStackSize(maxStackSize);
 	}
+	
+	
 
 }

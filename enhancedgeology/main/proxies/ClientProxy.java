@@ -1,5 +1,7 @@
 package enhancedgeology.main.proxies;
 
+import java.io.File;
+
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -18,7 +20,6 @@ public class ClientProxy extends CommonProxy {
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		
 	}
 
 	@Init
@@ -32,8 +33,6 @@ public class ClientProxy extends CommonProxy {
 		
 		System.out.println("[EnhancedGeology] Preloading texture completato");
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTettoAmianto.class, new RenderTableTettoAmianto());
-		
-
 	}
 
 	@Mod.PostInit

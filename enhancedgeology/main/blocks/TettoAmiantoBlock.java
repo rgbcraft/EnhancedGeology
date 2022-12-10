@@ -1,9 +1,22 @@
 package enhancedgeology.main.blocks;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.InputStream;
+
+import javax.print.attribute.standard.Media;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.SourceDataLine;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import enhancedgeology.main.CreativeTab;
 import enhancedgeology.main.entities.TileEntityTettoAmianto;
+import javazoom.jl.player.Player;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;

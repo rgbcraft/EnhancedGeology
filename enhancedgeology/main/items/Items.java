@@ -36,7 +36,7 @@ public class Items {
 	
 	//ITEMS
 	public static Item GlassHammer, GasDrill, HammerDrill, SDSHammerDrill, OxyFuelTorch, MartelloGeologo, Crisotilo, Biotite, Feldspato, Muscovite,
-	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro,
+	Magnetite, Ematite, Zircone, Serpentino, Orneblenda, Brucite, Fluorite, Fluoro, Goetite, Siderite,
 	U3O8, UO2, LEU, HEU, MGEU, MOX, UF6Nat, UF6LE, UF6HE, UF6MGE, LECell, LECellx2, LECellx4, HECell, HECellx2, HECellx4, MGECell, MGECellx2, MGECellx4, MOXCell, MOXCellx2, MOXCellx4,
 	Zirconio, Zircaloy, ZircaloyPlate, Miscela,
 	Gravimetro, Conduttimetro, ContatoreGeiger, Bateia, LOXCell, IronScraps, AcetyleneCell, OxygenCell,Duralumin,AlloyMixture2014, CopperSulfate, CopperOxide;
@@ -84,7 +84,8 @@ public class Items {
 	Orneblenda = new ItemMinerale(16058, 8, "Orneblenda", 64);
 	Brucite = new ItemMinerale(16059, 9, "Brucite", 64);
 	Fluorite = new ItemMinerale(16060, 10, "Fluorite", 64);
-	
+	Goetite = new ItemMinerale(16061, 12, "Goetite", 64);
+	Siderite = new ItemMinerale(16062, 13, "Siderite", 64);
 	
 	U3O8 = new ItemMinerale(16211, 11, "U3O8", 8);
 	LEU = new ItemOggetto(16212, 48, "LEU", 64);
@@ -156,6 +157,8 @@ public class Items {
 		LanguageRegistry.addName(Orneblenda, "Orneblende");
 		LanguageRegistry.addName(Brucite, "Brucite");
 		LanguageRegistry.addName(Fluorite, "Fluorite");
+		LanguageRegistry.addName(Goetite, "Goethite");
+		LanguageRegistry.addName(Siderite, "Siderite");
 		
 		LanguageRegistry.addName(Fluoro, "Fluorine Cell");
 		LanguageRegistry.addName(LOXCell, "Liquid Oxygen Cell");
