@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import enhancedgeology.main.blocks.Blocks;
 import enhancedgeology.main.items.Items;
 import net.minecraftforge.common.MinecraftForge;
@@ -573,8 +574,109 @@ public class CraftingHandler {
 				GregtechCompat.getGregTechItem(2, 8, 35),
 		new ItemStack(Items.Miscela, 1), cell, 100, 1);
 		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.stoneStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Block.stone, 1)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.andesiteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.roccia, 1, 0)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.dioriteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.roccia, 1, 1)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.graniteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.roccia, 1, 2)
+		});
 		
 		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.polishedAndesiteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.materiale, 1, 0)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.polishedDioriteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.materiale, 1, 1)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.polishedGraniteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.materiale, 1, 2)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.ardesiaStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.roccia, 1, 4)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.quarziteStairs, 4), new Object[] {
+				"  #", " ##", "###",
+				'#', new ItemStack(Blocks.materiale, 1, 4)
+		});
+		
+		//slab
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 0), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.roccia, 1, 0)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 1), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.roccia, 1, 1)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 2), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.roccia, 1, 2)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 3), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Block.stone, 1)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 4), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.roccia, 1, 4)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 5), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.roccia, 1, 5)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.rocciaSingleSlab, 6, 6), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.roccia, 1, 6)
+		});
+		
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materialeSingleSlab, 6, 0), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.materiale, 1, 0)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materialeSingleSlab, 6, 1), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.materiale, 1, 1)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materialeSingleSlab, 6, 2), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.materiale, 1, 2)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.materialeSingleSlab, 6, 3), new Object[] {
+				"###", "   ", "   ",
+				'#', new ItemStack(Blocks.materiale, 1, 3)
+		});
 		
 	}
 }
